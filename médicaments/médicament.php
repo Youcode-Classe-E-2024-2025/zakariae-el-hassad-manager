@@ -16,7 +16,7 @@
             <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">Home</a></li>
                 <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">Packages</a></li>
                 <li><a href="/zakariae-el-hassad-manager/médicaments/médicament.php">médicaments</a></li>
-                <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">Version</a></li>
+                <li><a href="/zakariae-el-hassad-manager/stocks/stock.php">stocks</a></li>
             </ul>
         </nav>
     </aside>
