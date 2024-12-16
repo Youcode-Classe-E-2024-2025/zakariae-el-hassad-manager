@@ -13,7 +13,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">Home</a></li>
+            <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">Home</a></li>
                 <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">Packages</a></li>
                 <li><a href="/zakariae-el-hassad-manager/médicaments/médicament.php">médicaments</a></li>
                 <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">Version</a></li>
@@ -36,8 +36,10 @@
                     <tr>
                         <th>ID</th>
                         <th>Nom</th>
-                        <th>Adresse</th>
-                        <th>Site Web</th>
+                        <th>description</th>
+                        <th>dosage</th>
+                        <th>form</th>
+                        <th>indication</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -54,7 +56,7 @@
                         die("Connection failed: " . $connection->connect_error);
                     }
 
-                    $sql = "SELECT * FROM fabricants";
+                    $sql = "SELECT * FROM médicaments";
                     $result = $connection->query($sql);
                     if (!$result) {
                         die("Invalid query: " . $connection->error);
@@ -65,8 +67,10 @@
                         <tr>
                             <td>{$row['id']}</td>
                             <td>{$row['nom']}</td>
-                            <td>{$row['adresse']}</td>
-                            <td>{$row['site_web']}</td>
+                            <td>{$row['description']}</td>
+                            <td>{$row['dosage']}</td>
+                            <td>{$row['form']}</td>
+                            <td>{$row['indication']}</td>
                             <td>
                                 <a href='/brief1_php/package/p_edit.php?id={$row['id']}' class='btn'>Edit</a>
                                 <a href='/brief1_php/package/p_delete.php?id={$row['id']}' class='btn danger'>Delete</a>
@@ -77,6 +81,3 @@
                 </tbody>
             </table>
         </section>
-    </main>
-</body>
-</html>
