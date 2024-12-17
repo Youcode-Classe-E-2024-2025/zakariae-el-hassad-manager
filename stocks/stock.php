@@ -27,7 +27,7 @@
             <p class="subtitle">---------- Liste des fabricants ----------</p>
         </header>
         <div class="actions">
-            <a href="/zakariae_el_hassad_package/package/p_create.php" class="btn">Nouveau fabricants</a>
+            <a href="/zakariae-el-hassad-manager/stocks/s_ajouter.php" class="btn">Nouveau fabricants</a>
         </div>
         <section class="table-section">
             <table>

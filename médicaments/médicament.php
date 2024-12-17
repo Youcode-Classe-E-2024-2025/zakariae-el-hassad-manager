@@ -27,7 +27,7 @@
             <p class="subtitle">---------- Liste des fabricants ----------</p>
         </header>
         <div class="actions">
-            <a href="/zakariae_el_hassad_package/package/p_create.php" class="btn">Nouveau fabricants</a>
+            <a href="/zakariae-el-hassad-manager/médicaments/m_ajouter.php" class="btn">Nouveau fabricants</a>
             <a href="/brief1_php/package/p_create_aut.php" class="btn">Relation fabricants et Auteur</a>
         </div>
         <section class="table-section">
