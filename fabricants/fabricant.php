@@ -13,8 +13,8 @@
         </div>
         <nav>
             <ul>
-                <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">Home</a></li>
-                <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">Packages</a></li>
+            <li><a href="/zakariae-el-hassad-manager/utilisateurs/utilisateur.php">utilisateurs</a></li>
+                <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">fabricant</a></li>
                 <li><a href="/zakariae-el-hassad-manager/médicaments/médicament.php">médicaments</a></li>
                 <li><a href="/zakariae-el-hassad-manager/stocks/stock.php">stocks</a></li>
             </ul>
@@ -27,8 +27,7 @@
             <p class="subtitle">---------- Liste des fabricants ----------</p>
         </header>
         <div class="actions">
-            <a href="/zakariae_el_hassad_package/package/p_create.php" class="btn">Nouveau fabricants</a>
-            <a href="/brief1_php/package/p_create_aut.php" class="btn">Relation fabricants et Auteur</a>
+            <a href="/zakariae-el-hassad-manager/fabricants/f_ajouter.php" class="btn">Nouveau fabricants</a>
         </div>
         <section class="table-section">
             <table>

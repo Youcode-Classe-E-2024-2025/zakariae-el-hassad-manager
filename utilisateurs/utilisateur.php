@@ -34,9 +34,8 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>quantite</th>
-                        <th>date_expiration</th>
-                        <th>id de médicament</th>
+                        <th>nom</th>
+                        <th>email</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -53,7 +52,7 @@
                         die("Connection failed: " . $connection->connect_error);
                     }
 
-                    $sql = "SELECT * FROM stocks";
+                    $sql = "SELECT * FROM utilisateurs";
                     $result = $connection->query($sql);
                     if (!$result) {
                         die("Invalid query: " . $connection->error);
@@ -63,9 +62,8 @@
                         echo "
                         <tr>
                             <td>{$row['id']}</td>
-                            <td>{$row['quantite']}</td>
-                            <td>{$row['date_expiration']}</td>
-                            <td>{$row['médicament_id']}</td>
+                            <td>{$row['nom']}</td>
+                            <td>{$row['email']}</td>
                             <td>
                                 <a href='/brief1_php/package/p_edit.php?id={$row['id']}' class='btn'>Edit</a>
                                 <a href='/brief1_php/package/p_delete.php?id={$row['id']}' class='btn danger'>Delete</a>
