@@ -28,7 +28,7 @@
         </header>
         <div class="actions">
             <a href="/zakariae-el-hassad-manager/médicaments/m_ajouter.php" class="btn">Nouveau fabricants</a>
-            <a href="/brief1_php/package/p_create_aut.php" class="btn">Relation fabricants et Auteur</a>
+            <a href="/zakariae-el-hassad-manager/médicaments/f_m_ajouter.php" class="btn">Relation fabricants et Auteur</a>
         </div>
         <section class="table-section">
             <table>

@@ -24,16 +24,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($row['active'] == 1) {
             $_SESSION['id'] = $row['id'];
             $_SESSION['nom'] = $row['nom'];
-            header("Location: /zakariae-el-hassad-manager/utilisateurs/utilisateur.php");
+            $_SESSION['id_role'] = $row['id_role'];
+
+            if ($row['id_role'] == 1) {
+                header("Location: /zakariae-el-hassad-manager/utilisateurs/utilisateur.php");
+            } else {
+                header("Location: /zakariae-el-hassad-manager/home.php");
+            }
             exit();
         } else {
-            echo "حسابك غير مفعل. من فضلك تواصل مع الدعم.";
+            echo "Votre compte n'est pas activé. Veuillez contacter l'assistance.";
         }
     } else {
-        echo "بيانات الدخول غير صحيحة.";
+        echo "Les données de connexion sont incorrectes.";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>

@@ -6,29 +6,23 @@ $username = "root";
 
 $connection = new mysqli($servername, $username, $password, $database);
 
-$nom = "";
-$description = "";
-$dosage = "";
-$form = "";
-$indication = "";
+$fabricant_id = "";
+$médicament_id = "";
 
 $errorMessage = "";
 $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nom = $_POST["nom"];
-    $description = $_POST["description"];
-    $dosage = $_POST["dosage"];
-    $form = $_POST["form"];
-    $indication = $_POST["indication"];
+    $fabricant_id = $_POST["fabricant_id"];
+    $médicament_id = $_POST["médicament_id"];
 
     do {
-        if (empty($nom) || empty($description) || empty($form) || empty($indication)) {
+        if (empty($fabricant_id) || empty($médicament_id)) {
             $errorMessage = "All fields are required.";
             break;
         }
 
-        $sql = "INSERT INTO médicaments (nom, description,dosage,form,indication) VALUES ('$nom', '$description','$dosage','$form','$indication')";
+        $sql = "INSERT INTO fabricant_médicament (fabricant_id, médicament_id) VALUES ('$fabricant_id', '$médicament_id')";
         $result = $connection->query($sql);
 
         if (!$result) {
@@ -36,11 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             break;
         }
 
-        $nom = "";
-        $description = "";
-        $dosage = "";
-        $form = "";
-        $indication = "";
+        $fabricant_id = "";
+        $médicament_id = "";
 
         $successMessage = "Student added successfully.";
         
@@ -92,27 +83,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
 
             <form action="" method="post">
+                <!-- Nom -->
                 <div class="mb-3">
-                    <label for="nom" class="form-label">Nom du Fabricant</label>
-                    <input type="text" class="form-control" name="nom" id="nom" placeholder="Entrez le nom" value="<?php echo htmlspecialchars($nom); ?>">
+                    <label for="fabricant_id" class="form-label">fabricant_id</label>
+                    <input type="number" class="form-control" name="fabricant_id" id="fabricant_id" placeholder="Entrez le fabricant_id" value="<?php echo htmlspecialchars($fabricant_id); ?>">
                 </div>
+                <!-- Adresse -->
                 <div class="mb-3">
-                    <label for="description" class="form-label">description</label>
-                    <input type="text" class="form-control" name="description" id="description" placeholder="Entrez l'description" value="<?php echo htmlspecialchars($description); ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="dosage" class="form-label">Site Web</label>
-                    <input type="text" class="form-control" name="dosage" id="dosage" placeholder="entre le dosage" value="<?php echo htmlspecialchars($dosage); ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="form" class="form-label">form</label>
-                    <input type="text" class="form-control" name="form" id="form" placeholder="entre le form" value="<?php echo htmlspecialchars($form); ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="indication" class="form-label"> indication</label>
-                    <input type="text" class="form-control" name="indication" id="indication" placeholder="entre le indication" value="<?php echo htmlspecialchars($indication); ?>">
+                    <label for="médicament_id" class="form-label">médicament_id</label>
+                    <input type="number" class="form-control" name="médicament_id" id="médicament_id" placeholder="Entrez l'médicament_id" value="<?php echo htmlspecialchars($médicament_id); ?>">
                 </div>
 
+                <!-- Success Message -->
                 <?php if (!empty($successMessage)): ?>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <strong><?php echo $successMessage; ?></strong>
@@ -120,6 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 <?php endif; ?>
 
+                <!-- Boutons -->
                 <div class="d-flex justify-content-between">
                     <button type="submit" class="btn btn-primary">Ajouter</button>
                     <a href="/zakariae-el-hassad-manager/médicaments/médicament.php" class="btn btn-secondary">Annuler</a>

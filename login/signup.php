@@ -1,5 +1,4 @@
 <?php 
-// Connect to the database
 $servername = "localhost";
 $password = "";
 $database = "data_manager";
@@ -39,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $successMessage = "Student added successfully.";
         
-        header("location: /zakariae-el-hassad-manager/utilisateurs/utilisateur.php");
+        header("location: /zakariae-el-hassad-manager/login/login.php");
         exit;
 
     } while (false);

@@ -1,17 +1,14 @@
 <?php
-// الاتصال بقاعدة البيانات
 $servername = "localhost";
 $username = "root";
 $password = "";
 $database = "data_manager";
 $connection = new mysqli($servername, $username, $password, $database);
 
-// تحقق من الاتصال
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
 
-// 1. التعامل مع طلب تغيير حالة "active"
 if (isset($_GET['action']) && $_GET['action'] == 'toggle_active' && isset($_GET['id'])) {
     $userId = $_GET['id'];
     $sql = "SELECT active FROM utilisateurs WHERE id = $userId";
@@ -21,24 +18,22 @@ if (isset($_GET['action']) && $_GET['action'] == 'toggle_active' && isset($_GET[
     
     $updateSql = "UPDATE utilisateurs SET active = $newStatus WHERE id = $userId";
     if ($connection->query($updateSql) === TRUE) {
-        header('Location: ' . $_SERVER['PHP_SELF']); // إعادة تحميل الصفحة بعد التعديل
+        header('Location: ' . $_SERVER['PHP_SELF']);
     } else {
         echo "Error updating record: " . $connection->error;
     }
 }
 
-// 2. التعامل مع طلب حذف المستخدم
 if (isset($_GET['action']) && $_GET['action'] == 'delete' && isset($_GET['id'])) {
     $userId = $_GET['id'];
     $deleteSql = "DELETE FROM utilisateurs WHERE id = $userId";
     if ($connection->query($deleteSql) === TRUE) {
-        header('Location: ' . $_SERVER['PHP_SELF']); // إعادة تحميل الصفحة بعد الحذف
+        header('Location: ' . $_SERVER['PHP_SELF']);
     } else {
         echo "Error deleting record: " . $connection->error;
     }
 }
 
-// 3. استعلام لعرض بيانات المستخدمين
 $sql = "SELECT * FROM utilisateurs";
 $result = $connection->query($sql);
 if (!$result) {
@@ -89,7 +84,6 @@ if (!$result) {
                 </thead>
                 <tbody>
                     <?php
-                    // عرض المستخدمين
                     while ($row = $result->fetch_assoc()) {
                         echo "
                         <tr>
@@ -98,7 +92,7 @@ if (!$result) {
                             <td>{$row['email']}</td>
                             <td>
                                 <a href='/zakariae-el-hassad-manager/utilisateurs/utilisateur.php?action=toggle_active&id={$row['id']}' class='btn'>" . 
-                                ($row['active'] == 1 ? 'إلغاء التفعيل' : 'تفعيل') . "</a>
+                                ($row['active'] == 1 ? ' Désactiver' : 'activation') . "</a>
                                 <a href='/zakariae-el-hassad-manager/utilisateurs/utilisateur.php?action=delete&id={$row['id']}' class='btn danger'>حذف</a>
                             </td>
                         </tr>";
