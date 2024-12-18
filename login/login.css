@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glassmorphism Login Form | CodingNepal</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    @import url("./img/Leonardo_Phoenix_A_stylized_modern_and_sleek_logo_for_ZH_a_bol_0.jpg");
+@import url("../img/Leonardo_Phoenix_A_stylized_modern_and_sleek_logo_for_ZH_a_bol_0.jpg");
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +18,7 @@ body::before {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url("./img/Leonardo_Phoenix_A_stylized_modern_and_sleek_logo_for_ZH_a_bol_0.jpg"), #000;
+  background: url("../img/Leonardo_Phoenix_A_stylized_modern_and_sleek_logo_for_ZH_a_bol_0.jpg"), #000;
   background-position: center;
   background-size: cover;
 }
@@ -126,33 +117,3 @@ button:hover {
   margin-top: 30px;
   color: #fff;
 }
-  </style>
-</head>
-<body>
-  <div class="wrapper">
-    <form action="#">
-      <h2>Login</h2>
-        <div class="input-field">
-        <input type="text" required>
-        <label>Enter your email</label>
-      </div>
-      <div class="input-field">
-        <input type="password" required>
-        <label>Enter your password</label>
-      </div>
-      <div class="forget">
-        <label for="remember">
-          <input type="checkbox" id="remember">
-          <p>Remember me</p>
-        </label>
-        <a href="#">Forgot password?</a>
-      </div>
-      <button type="submit">Log In</button>
-      <button><a href="/zakariae-el-hassad-manager/signup.html">Sign UP</a></button>
-      <div class="register">
-        <p>Don't have an account? <a href="#">Register</a></p>
-      </div>
-    </form>
-  </div>
-</body>
-</html>
