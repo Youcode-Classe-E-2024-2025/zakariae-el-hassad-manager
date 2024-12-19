@@ -67,8 +67,8 @@
                             <td>{$row['date_expiration']}</td>
                             <td>{$row['médicament_id']}</td>
                             <td>
-                                <a href='/brief1_php/package/p_edit.php?id={$row['id']}' class='btn'>Edit</a>
-                                <a href='/brief1_php/package/p_delete.php?id={$row['id']}' class='btn danger'>Delete</a>
+                                <a href='/zakariae-el-hassad-manager/stocks/s_edit.php?id={$row['id']}' class='btn'>Edit</a>
+                                <a href='/zakariae-el-hassad-manager/stocks/s_delete.php?id={$row['id']}' class='btn danger'>Delete</a>
                             </td>
                         </tr>";
                     }

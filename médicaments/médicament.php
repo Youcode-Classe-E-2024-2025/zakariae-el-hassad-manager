@@ -72,8 +72,8 @@
                             <td>{$row['form']}</td>
                             <td>{$row['indication']}</td>
                             <td>
-                                <a href='/brief1_php/package/p_edit.php?id={$row['id']}' class='btn'>Edit</a>
-                                <a href='/brief1_php/package/p_delete.php?id={$row['id']}' class='btn danger'>Delete</a>
+                                <a href='/zakariae-el-hassad-manager/médicaments/m_edit.php?id={$row['id']}' class='btn'>Edit</a>
+                                <a href='/zakariae-el-hassad-manager/médicaments/m_delete.php?id={$row['id']}' class='btn danger'>Delete</a>
                             </td>
                         </tr>";
                     }
