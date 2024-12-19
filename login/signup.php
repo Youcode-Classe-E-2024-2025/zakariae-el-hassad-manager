@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             <?php endif; ?>
 
-      <form action="" method="post">
+      <form action="" method="post" id="signup-form">
       <h2>Sign UP</h2>      
 
       <div class="input-field">
@@ -100,6 +100,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </form>
   </div>
+
+  <script src="signup_validation.js"></script>
 </body>
 </html>
 
