@@ -56,10 +56,14 @@ if (!$result) {
         </div>
         <nav>
             <ul>
+                <li><a href="/zakariae-el-hassad-manager/home.php">Home</a></li>
                 <li><a href="/zakariae-el-hassad-manager/utilisateurs/utilisateur.php">utilisateurs</a></li>
                 <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">fabricant</a></li>
                 <li><a href="/zakariae-el-hassad-manager/médicaments/médicament.php">médicaments</a></li>
                 <li><a href="/zakariae-el-hassad-manager/stocks/stock.php">stocks</a></li>
+                <div class="mt-auto" style="margin-top: auto;">
+                    <a href="/zakariae-el-hassad-manager/login/login.php" class="btn btn-primary" style="margin-top: 20px;">Login</a>
+                </div>
             </ul>
         </nav>
     </aside>
@@ -93,7 +97,7 @@ if (!$result) {
                             <td>
                                 <a href='/zakariae-el-hassad-manager/utilisateurs/utilisateur.php?action=toggle_active&id={$row['id']}' class='btn'>" . 
                                 ($row['active'] == 1 ? ' Désactiver' : 'activation') . "</a>
-                                <a href='/zakariae-el-hassad-manager/utilisateurs/utilisateur.php?action=delete&id={$row['id']}' class='btn danger'>حذف</a>
+                                <a href='/zakariae-el-hassad-manager/utilisateurs/utilisateur.php?action=delete&id={$row['id']}' class='btn danger'>delete</a>
                             </td>
                         </tr>";
                     }

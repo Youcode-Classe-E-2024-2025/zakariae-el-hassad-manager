@@ -13,10 +13,14 @@
         </div>
         <nav>
             <ul>
-            <li><a href="/zakariae-el-hassad-manager/utilisateurs/utilisateur.php">utilisateurs</a></li>
+                <li><a href="/zakariae-el-hassad-manager/home.php">Home</a></li>
+                <li><a href="/zakariae-el-hassad-manager/utilisateurs/utilisateur.php">utilisateurs</a></li>
                 <li><a href="/zakariae-el-hassad-manager/fabricants/fabricant.php">fabricant</a></li>
                 <li><a href="/zakariae-el-hassad-manager/médicaments/médicament.php">médicaments</a></li>
                 <li><a href="/zakariae-el-hassad-manager/stocks/stock.php">stocks</a></li>
+                <div class="mt-auto" style="margin-top: auto;">
+                    <a href="/zakariae-el-hassad-manager/login/login.php" class="btn btn-primary" style="margin-top: 20px;">Login</a>
+                </div>
             </ul>
         </nav>
     </aside>
@@ -26,36 +30,53 @@
             <h1>Les Packages</h1>
             <p class="subtitle">---------- Liste des fabricants ----------</p>
         </header>
+
+        <?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "data_manager";
+
+        $connection = new mysqli($servername, $username, $password, $database);
+
+        if ($connection->connect_error) {
+            die("Connection failed: " . $connection->connect_error);
+        }
+
+        $count_sql = "SELECT COUNT(*) AS total_médicaments FROM médicaments";
+        $count_result = $connection->query($count_sql);
+        $total_médicaments = 0;
+
+        if ($count_result && $count_result->num_rows > 0) {
+            $row = $count_result->fetch_assoc();
+            $total_médicaments = $row['total_médicaments'];
+        }
+        ?>
+
         <div class="actions">
             <a href="/zakariae-el-hassad-manager/médicaments/m_ajouter.php" class="btn">Nouveau fabricants</a>
             <a href="/zakariae-el-hassad-manager/médicaments/f_m_ajouter.php" class="btn">Relation fabricants et Auteur</a>
         </div>
+
+        <div class="counter">
+            <h2>Total Médicaments : <span><?= htmlspecialchars($total_médicaments) ?></span></h2>
+        </div>
+
         <section class="table-section">
             <table>
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Nom</th>
-                        <th>description</th>
-                        <th>dosage</th>
-                        <th>form</th>
-                        <th>indication</th>
+                        <th>Description</th>
+                        <th>Dosage</th>
+                        <th>Form</th>
+                        <th>Indication</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "";
-                    $database = "data_manager";
-
-                    $connection = new mysqli($servername, $username, $password, $database);
-
-                    if ($connection->connect_error) {
-                        die("Connection failed: " . $connection->connect_error);
-                    }
-
                     $sql = "SELECT * FROM médicaments";
                     $result = $connection->query($sql);
                     if (!$result) {
@@ -81,6 +102,6 @@
                 </tbody>
             </table>
         </section>
-        </main>
+    </main>
 </body>
 </html>
